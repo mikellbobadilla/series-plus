@@ -15,7 +15,7 @@ import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-public class GenreServices {
+public class GenreService {
 
     private final GenreRepository repository;
 
@@ -30,11 +30,7 @@ public class GenreServices {
         return pageResponseMapper(genres);
     }
 
-    public GenreResponse save(CreateGenre dto) throws Exception {
-
-        if (dto == null) {
-            throw new Exception("Name is required");
-        }
+    public GenreResponse save(CreateGenre dto) {
 
         if (repository.existsByName(dto.name())) {
             throw new GenreNotFoundException("Genre exists");

@@ -3,7 +3,7 @@ package ar.mikellbobadilla.controllers;
 import ar.mikellbobadilla.dto.CreateGenre;
 import ar.mikellbobadilla.dto.GenrePageResponse;
 import ar.mikellbobadilla.dto.GenreResponse;
-import ar.mikellbobadilla.services.GenreServices;
+import ar.mikellbobadilla.services.GenreService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class GenreController {
 
-    private final GenreServices services;
+    private final GenreService services;
 
     @GetMapping
     public ResponseEntity<GenrePageResponse> findAll(
